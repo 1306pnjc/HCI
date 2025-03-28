@@ -1,0 +1,267 @@
+body {
+    background: url(background.jpeg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 160vh;
+    padding: 20px;
+    box-sizing: border-box;
+}
+header {
+    width: 100%;
+    background: #2ea3ae;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+header h1 {
+    margin: 0;
+    color: black;
+    font-size: 28px;
+    font-weight: bold;
+    flex-shrink: 0; 
+}
+
+nav {
+    display: flex;
+    gap: 15px;
+    padding: 0px 40px;
+    margin-right: 60px;
+}
+
+nav a {
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: white;
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+    nav {
+        margin-top: 10px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+.profile-container {
+    width: 100%;
+    max-width: 600px;
+    height: 700px;
+    background-color: rgba(255, 255, 255, .6);
+    backdrop-filter: blur;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+    overflow: hidden;
+    text-align: center;
+    margin-top: -100px;
+}
+.cover {
+    background: url('pic.jpeg') no-repeat center center/cover;
+    height: 180px;
+    position: relative;
+}
+.profile-pic {
+    width: 140px;
+    height: 140px;
+    background: url('background.jpeg') no-repeat center center/cover;
+    border-radius: 50%;
+    border: 6px solid teal;
+    position: absolute;
+    bottom: -4px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.profile-details {
+    padding: 20px 20px 20px;
+}
+.profile-details h2 {
+    margin: 0;
+    font-size: 20px;
+    color: #2ea3ae;
+}
+.profile-details p {
+    margin: 5px 0;
+    color: black;
+    font-size: 18px;
+}
+.bio {
+    margin-top: 20px;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    text-align: left;
+    font-size: 16px;
+}
+.stats {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+    
+}
+.stats div {
+    text-align: center;
+}
+.stars {
+    color: gold;
+    font-size: 20px;
+    background-color: white;
+    border-radius: 10px;
+}
+.buttons {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+.buttons button {
+    padding: 14px 24px;
+    border: none;
+    color: white;
+    cursor: pointer;
+    border-radius: 8px;
+    font-size: 18px;
+    transition: 0.3s;
+}
+.book-btn {
+    background: #4a8c91;
+    color: black;
+}
+.book-btn:hover {
+    background: #4a8c91;
+    color: rgba(0, 0, 0, 0.253);
+}
+.msg-btn {
+    background: #4a8c91;
+    color: black;
+}
+.msg-btn:hover {
+    background: #80EF80;
+    color: black;
+}
+.Sessions{
+    background-color:#4a8c91;
+    border-radius: 30px;
+    width: 90px;
+    height: 70px;
+    padding: 10px;
+}
+
+.years{
+    background-color:#4a8c91;
+    border-radius: 30px;
+    width: 90px;
+    height: 70px;
+    padding: 10px;
+}
+
+.rating{
+    background-color:#4a8c91;
+    border-radius: 30px;
+  
+    padding: 10px 15px;
+}
+
+.dark-mode {
+    color: white;
+}
+
+.dark-mode header {
+    background: #1f1f1f;
+    color: white;
+}
+.dark-mode header h1{
+    color: white;
+}
+
+.dark-mode nav a {
+    color: white;
+}
+
+.dark-mode nav a:hover {
+    color: #80EF80;
+}
+
+.dark-mode .profile-container {
+    background-color: rgba(50, 50, 50, 0.8);
+    color: white;
+}
+
+.dark-mode .bio{
+    background: black;
+    color: white;
+}
+.dark-mode p{
+    color: white;
+}
+
+.dark-mode .Sessions,
+.dark-mode .years,
+.dark-mode .rating {
+    background-color: black;
+    color: white;
+}
+
+.dark-mode .stars {
+    color: gold;
+}
+
+.dark-mode .book-btn {
+    background: white;
+    color: black;
+}
+
+.dark-mode .msg-btn {
+    background: white;
+    color: black;
+}
+
+.dark-mode .book-btn:hover {
+    background: #66cc66;
+    color: black;
+}
+
+.dark-mode .msg-btn:hover {
+    background: #1f1f1f;
+}
+
+.dark-mode-toggle {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    background: #4a8c91;
+    color: white;
+    border: none;
+    margin-right: 30px;
+    padding: 8px 15px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.dark-mode-toggle:hover {
+    background: #80EF80;
+    color: black;
+}
