@@ -1,0 +1,267 @@
+body{
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif ;
+    background-color: #93DEFF;
+}
+
+.container{
+    width: 90%;
+    height: 530px;
+    display: flex;
+    flex: 1;
+    margin: auto;
+    align-items: center;
+}
+
+header{
+    height: 60px;
+    font-size: 15px;
+    margin-top: -16px;
+    margin-left: -9px;
+    margin-right: -9px;
+    margin-bottom: 20px;
+    background-color: #4a8c91;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+h1{
+    font-size: 24px;
+}
+
+nav {
+    display: flex;
+    gap: 15px;
+}
+
+.nav-icon {
+    color: #e7f5f7;
+    padding: 20px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    transition: transform 0.3s ease;
+    font-weight: 500;
+}
+
+.nav-icon:hover {
+    color: white;
+    transform: scale(1.1);
+}
+
+.nav-icon:active{
+    color: rgb(255, 255, 255);
+    transform: scale(0.9);
+}
+
+.mainVideo{
+    background-color: black;
+    width: 80%;
+    height: 500px;
+    border: 5px solid black;
+    border-radius: 15px;
+    display: flex;
+    flex: 2;
+    margin: auto;
+    margin-top: 1px;
+    position: relative;
+    left: 2px;
+    margin-right: 5px;
+}
+
+.smallVideo{
+    background-color: gray;
+    height: 200px;
+    width: 215px;
+    border: 3px solid aliceblue;
+    border-radius: 8px;
+    position: fixed;
+    bottom: 45px;
+    right: 335px;
+}
+
+@media screen and (max-width: 768px) {
+    .smallVideo {
+        bottom: 50px; 
+        right: 180px; 
+        width: 130px; 
+        height: 130px; 
+    }
+
+    .buttons {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        position: fixed; 
+        transform: translate(-90%, 10%); 
+        gap: 5px;
+    }
+
+    .buttons button{
+        padding: 5px;
+        font-size: 12px;
+    } 
+    #soundOnly-btn, mute-btn, end-btn{
+        padding: 5px;
+    }
+    .chatInput {
+        width: 90%;
+
+    }  
+}
+
+.buttons{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    position: fixed;
+    gap: 20px;
+    position: fixed;
+    bottom: 50px;
+    left: 330px;
+    padding: 16px;
+}
+
+.buttons button{
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 8px;
+    border: none;
+}
+
+#soundOnly-btn, #send-Btn, #mute-btn, #end-btn{
+    padding: 10px;
+    transition: background-color 0.3s ease;
+    transition: transform 0.3s ease;
+}
+
+.chatBox {
+    background-color: #51a1a7;
+    height: 490px;
+    margin-top: -22px;
+    border: 1px solid white;
+    border-radius: 7px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 5px;
+    position: relative;
+    flex: 0.5;
+}
+
+.chatInput {
+    display: flex;
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 8px;
+    gap: 2px;
+}
+
+.chatInput input {
+    flex: 1;
+    border-radius: 5px;
+    border: 1px solid #51a1a7;
+}
+
+.chatInput button {
+    padding: 6px 10px;
+    border-radius: 5px;
+    border: none;
+    background: #008080;
+    color: white;
+    cursor: pointer;    
+}
+
+.chatBox-container{
+    flex: 1;
+    height: 300px;
+    overflow-y: auto;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+}
+
+#mute-btn:hover {
+    opacity: 0.8;
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+}
+
+#mute-btn:active{
+    color: rgb(255, 255, 255);
+    transform: scale(0.8);
+}
+
+#end-btn:hover {
+    opacity: 0.8;
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+}
+
+#end-btn:active{
+    color: rgb(255, 255, 255);
+    transform: scale(0.8);
+}
+
+#soundOnly-btn:hover {
+    opacity: 0.8;
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+}
+
+#soundOnly-btn:active{
+    color: rgb(255, 255, 255);
+    transform: scale(0.8);
+}
+
+#send-Btn:hover {
+    opacity: 0.8;
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+}
+
+#send-Btn:active{
+    color: rgb(255, 255, 255);
+    transform: scale(0.8);
+}
+
+body.dark-mode {
+    background-color: #030a0a;
+    color: #f1f1f1;
+}
+
+header.dark-mode {
+    background-color: #040e0e;
+}
+
+.nav-icon.dark-mode {
+    color: #dcdcdc;
+}
+
+.mainVideo.dark-mode {
+    background-color: #121212;
+    border: 5px solid #222;
+}
+
+.chatBox.dark-mode {
+    background-color: #11373a;
+}
+
+.chatBox-container.dark-mode {
+    background-color: #444;
+}
+
+input.dark-mode {
+    background-color: #555;
+    color: white;
+}
+
+button.dark-mode {
+    background-color: #444;
+    color: white;
+}
+
+
+
