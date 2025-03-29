@@ -26,36 +26,56 @@ header {
     z-index: 1000;
 }
 
-header h1 {
-    margin: 0;
-    color: black;
-    font-size: 28px;
-    font-weight: bold;
-    flex-shrink: 0; 
-}
-
-nav {
+.navbar{
+    position: fixed;
+    background-color: #93DEFF;
+    width: 100%;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    margin: 0 auto;
+    gap:10px;
+    padding: 0 20px;
     display: flex;
-    gap: 15px;
-    padding: 0px 40px;
-    margin-right: 60px;
-}
-
-nav a {
-    text-decoration: none;
-    color: black;
-    font-size: 18px;
+    align-items: center;
+    justify-content: space-between;
+    /*box-shadow: 2px 5px 10px rgba(0,0,0,1);*/
+  }
+  
+  .navbar ul li{
+    list-style: none;
+    display: inline-block;
+    margin: 0 20px;
+  }
+  
+  .navbar ul li a{
+    text-decoration: dashed;
+    color: #000000;
+  }
+  
+  .logo {
+    display: flex;
+    align-items: center;
+    margin-right: auto; /* Pushes the nav to the right */
+  }
+  
+  .logo img {
+    height: 70px; /* Adjust as needed */
+    margin-right: 10px; /* Space between logo and text */
+  }
+  
+  .logo-text {
+    font-size: 1.5rem;
     font-weight: bold;
-    transition: color 0.3s;
-}
-
-nav a:hover {
-    color: white;
-}
-
+    color: #000000;
+  }
+  
+  h1{
+    cursor: pointer;
+  }
+  
 @media (max-width: 768px) {
     header {
-        flex-direction: column;
         text-align: center;
     }
     nav {
@@ -264,4 +284,61 @@ nav a:hover {
 .dark-mode-toggle:hover {
     background: #80EF80;
     color: black;
+}
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 34px;
+    height: 20px;
+  }
+  
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.4s;
+    border-radius: 50px;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 12px;
+    width: 12px;
+    border-radius: 50px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: 0.4s;
+  }
+  
+  input:checked + .slider {
+    background-color: #4caf50;
+  }
+  
+  input:checked + .slider:before {
+    transform: translateX(14px);
+  }
+  
+  .dark-mode header {
+    background: #1f1f1f;
+    color: white;
+}
+
+.dark-mode .navbar {
+    background-color: #333; /* Dark mode background */
+}
+
+.dark-mode .navbar ul li a {
+    color: white;
 }

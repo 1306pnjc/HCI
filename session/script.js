@@ -1,20 +1,81 @@
-const darkModeToggle = document.getElementById('dark-mode-toggle');
-const body = document.body;
-const header = document.querySelector('header');
-const navIcons = document.querySelectorAll('.nav-icon');
-const mainVideo = document.querySelector('.mainVideo');
-const chatBox = document.querySelector('.chatBox');
-const chatBoxContainer = document.querySelector('.chatBox-container');
-const input = document.querySelector('.chatInput input');
-const buttons = document.querySelectorAll('button');
+// Wait for the DOM content to load before running scripts
+document.addEventListener("DOMContentLoaded", function () {
+    const toggleSwitch = document.getElementById("darkModeToggle");
+    const body = document.body;
 
-darkModeToggle.addEventListener('click', () => {
-    body.classList.toggle('dark-mode');
-    header.classList.toggle('dark-mode');
-    navIcons.forEach(icon => icon.classList.toggle('dark-mode'));
-    mainVideo.classList.toggle('dark-mode');
-    chatBox.classList.toggle('dark-mode');
-    chatBoxContainer.classList.toggle('dark-mode');
-    input.classList.toggle('dark-mode');
-    buttons.forEach(button => button.classList.toggle('dark-mode'));
+    // Check local storage for dark mode preference
+    if (localStorage.getItem("darkMode") === "enabled") {
+        body.classList.add("dark-mode");
+        toggleSwitch.checked = true;
+    }
+
+    toggleSwitch.addEventListener("click", function () {
+        body.classList.toggle("dark-mode");
+
+        // Store preference in local storage
+        if (body.classList.contains("dark-mode")) {
+            localStorage.setItem("darkMode", "enabled");
+        } else {
+            localStorage.setItem("darkMode", "disabled");
+        }
+    });
+
+    // Function to simulate sending a message
+    const sendMessage = () => {
+        const chatInputField = document.getElementById('chatInputField');
+        const chatBoxContainer = document.getElementById('chatBoxContainer');
+
+        const message = chatInputField.value.trim();
+
+        if (message) {
+            // Display user message
+            const userMessageDiv = document.createElement('div');
+            userMessageDiv.classList.add('chat-message', 'user-message');
+            userMessageDiv.textContent = message;
+            chatBoxContainer.appendChild(userMessageDiv);
+
+            // Scroll to the latest message
+            chatBoxContainer.scrollTop = chatBoxContainer.scrollHeight;
+
+            // Clear input field
+            chatInputField.value = '';
+
+            // Simulate bot reply after 1 second
+            setTimeout(() => {
+                const botMessageDiv = document.createElement('div');
+                botMessageDiv.classList.add('chat-message', 'bot-message');
+                botMessageDiv.textContent = `Bot says: "${generateBotReply(message)}"`;
+                chatBoxContainer.appendChild(botMessageDiv);
+
+                // Scroll to the latest message
+                chatBoxContainer.scrollTop = chatBoxContainer.scrollHeight;
+            }, 1000);
+        }
+    }
+
+    // Event listener for send button
+    document.getElementById("send-Btn").addEventListener("click", sendMessage);
+
+    // Event listener for Enter key to send message
+    document.getElementById('chatInputField').addEventListener('keypress', function (e) {
+        if (e.key === 'Enter') {
+            sendMessage();
+        }
+    });
+
+    // Generate a random bot reply based on the user's message
+    const generateBotReply = (userMessage) => {
+        const replies = [
+            "I’m not sure I understand. Could you clarify?",
+            "That's interesting! Tell me more.",
+            "Could you rephrase that for me?",
+            "I can help with that. Let me think...",
+            "Nice question! Let me check...",
+            "Let me look into that for you.",
+            "Thanks for your input! Anything else?"
+        ];
+
+        // Basic reply based on the user's message
+        return replies[Math.floor(Math.random() * replies.length)];
+    }
 });

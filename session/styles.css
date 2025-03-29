@@ -1,6 +1,6 @@
 body{
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif ;
-    background-color: #93DEFF;
+    background-color: #32b5ec;
 }
 
 .container{
@@ -19,7 +19,6 @@ header{
     margin-left: -9px;
     margin-right: -9px;
     margin-bottom: 20px;
-    background-color: #4a8c91;
     padding: 15px;
     display: flex;
     justify-content: space-between;
@@ -134,6 +133,7 @@ nav {
     transition: transform 0.3s ease;
 }
 
+/* Chat Box Styles */
 .chatBox {
     background-color: #51a1a7;
     height: 490px;
@@ -146,6 +146,16 @@ nav {
     padding: 5px;
     position: relative;
     flex: 0.5;
+}
+
+.chatBox-container {
+    flex: 1;
+    height: 300px;
+    overflow-y: auto;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #f9f9f9;
 }
 
 .chatInput {
@@ -162,6 +172,7 @@ nav {
     flex: 1;
     border-radius: 5px;
     border: 1px solid #51a1a7;
+    padding: 6px;
 }
 
 .chatInput button {
@@ -170,17 +181,26 @@ nav {
     border: none;
     background: #008080;
     color: white;
-    cursor: pointer;    
+    cursor: pointer;
 }
 
-.chatBox-container{
-    flex: 1;
-    height: 300px;
-    overflow-y: auto;
-    border: 1px solid #ccc;
-    padding: 10px;
-    border-radius: 10px;
-    background-color: #f9f9f9;
+/* Dark Mode Adjustments */
+.dark-mode .chatBox {
+    background-color: #11373a;
+}
+
+.dark-mode .chatBox-container {
+    background-color: #444;
+}
+
+.dark-mode .chatInput input {
+    background-color: #555;
+    color: white;
+}
+
+.dark-mode .chatInput button {
+    background-color: #008080;
+    color: white;
 }
 
 #mute-btn:hover {
@@ -264,4 +284,139 @@ button.dark-mode {
 }
 
 
+.navbar{
+    position: fixed;
+    background-color: #93DEFF;
+    width: 100%;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    margin: 0 auto;
+    gap:10px;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /*box-shadow: 2px 5px 10px rgba(0,0,0,1);*/
+  }
+  
+  .navbar ul li{
+    list-style: none;
+    display: inline-block;
+    margin: 0 20px;
+  }
+  
+  .navbar ul li a{
+    text-decoration: dashed;
+    color: #000000;
+  }
+  
+  .logo {
+    display: flex;
+    align-items: center;
+    margin-right: auto; /* Pushes the nav to the right */
+  }
+  
+  .logo img {
+    height: 70px; /* Adjust as needed */
+    margin-right: 10px; /* Space between logo and text */
+  }
+  
+  .logo-text {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #000000;
+  }
+  
+  h1{
+    cursor: pointer;
+  }
 
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 34px;
+    height: 20px;
+  }
+  
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.4s;
+    border-radius: 50px;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 12px;
+    width: 12px;
+    border-radius: 50px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: 0.4s;
+  }
+  
+  input:checked + .slider {
+    background-color: #4caf50;
+  }
+  
+  input:checked + .slider:before {
+    transform: translateX(14px);
+  }
+/* Default Light Mode */
+body {
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif ;
+    background-color: #93DEFF;
+    color: black;
+}
+
+/* Dark Mode */
+.dark-mode {
+    background-color: #1e1e1e;
+    color: white;
+}
+
+.dark-mode header {
+    background-color: black;
+}
+
+.dark-mode .mainVideo {
+    border-color: white;
+}
+
+.dark-mode .chatBox {
+    background-color: #222;
+    border-color: white;
+}
+
+.dark-mode .chatInput input {
+    background-color: #444;
+    color: white;
+}
+
+.dark-mode .chatInput button {
+    background-color: #008080;
+    color: white;
+}
+/* Dark Mode Header */
+.dark-mode .navbar {
+    background-color: black; /* Turns header black */
+}
+
+.dark-mode .navbar ul li a,
+.dark-mode .logo-text {
+    color: white; /* Turns text white */
+}
